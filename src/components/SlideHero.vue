@@ -1,21 +1,21 @@
 <template>
   <div class="slide-hero">
-    <v-img src="https://images.ctfassets.net/gm2gqumrpcat/54Oh2GnfkNp3dlcygmJJC5/c4b026af124828564cf7687ed8b39feb/best-sellers-restock-desktop-hero-sage.jpg?w=2400&h=800&q=50&fm=webp" height="560" class="grey darken-4" style="position: relative">
+    <v-img src="https://element9.solindo.com/img-tuft/TUFT-BANNER-1920x1000.jpg" height="560" class="grey darken-4" style="position: relative">
       <div class="box-content">
         <div class="content">
           <div class="text">
             <h1 class="
                 transition-swing
-                text-h3
+                text-h4
                 font-weight-bold
                 white--text
                 text-center
               ">
-              BEST SELLERS RESTOKED
+              POWER OF INNOVATION
             </h1>
           </div>
-          <v-btn large outlined color="white" class="mt-5"> Shop Now </v-btn>
-        </div>
+          <v-btn large outlined color="white" to="/collections" class="mt-5"> Shop Now </v-btn>
+        </div> 
       </div>
     </v-img>
   </div>

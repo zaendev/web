@@ -1,12 +1,12 @@
 <template>
-  <v-container fluid class="px-7">
+  <v-container fluid :class="$vuetify.breakpoint.mdAndUp ? 'px-7': ''">
     <section>
-      <div class="header-show py-7 d-flex align-center">
+      <div :class="$vuetify.breakpoint.mdAndUp ? 'header-show py-7 d-flex align-center' : 'header-show py-2'">
         <div>
-          <h1>CHEVRONS TEE</h1>
+          <h1 :class="$vuetify.breakpoint.mdAndUp ? '':'text-h6'">CHEVRONS TEE</h1>
         </div>
-        <v-spacer></v-spacer>
-        <div>
+        <v-spacer v-if="$vuetify.breakpoint.mdAndUp"></v-spacer>
+        <div v-if="$vuetify.breakpoint.mdAndUp">
           <v-chip-group>
             <v-chip filter outlined label class="py-5 pr-5">
               <!-- <v-avatar color="primary" size="56" class="mr-2"></v-avatar> -->
@@ -96,7 +96,7 @@
               <div>
                 <div class="label">COLOR</div>
                 <div>
-                  <v-chip-group>
+                  <v-chip-group style="flex-wrap: wrap;">
                     <v-chip
                       v-for="(color, i) in colors"
                       :key="'color' + i"
@@ -157,7 +157,7 @@
 
     <section class="mt-15">
       <v-row>
-        <v-col md="8">
+        <v-col cols="12" sm="8" md="9">
           <v-row>
             <v-col>
               <v-divider />
@@ -165,12 +165,12 @@
             </v-col>
           </v-row>
           <v-row>
-            <v-col md="3" v-for="p in 8" :key="'product' + p">
+            <v-col cols="6" sm="6" md="3" v-for="p in 8" :key="'product' + p">
               <product />
             </v-col>
           </v-row>
         </v-col>
-        <v-col md="4">
+        <v-col cols="12" sm="4" md="3">
           <v-row>
             <v-col>
               <v-divider />
@@ -232,13 +232,13 @@ export default {
         code: "#fff",
       },
       {
-        name: "Laurel Oak",
-        code: "#8a8369",
+        name: "Blue",
+        code: "#3f51b5",
       },
-      {
-        name: "Mountain Mist",
-        code: "#a98f86",
-      },
+      // {
+      //   name: "Mountain Mist",
+      //   code: "#a98f86",
+      // },
     ],
     images: [
       'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/a47b2ef9-8239-4e82-99fd-e6159c0df489/air-max-97-shoe-EBZrb8.png',

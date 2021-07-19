@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Collection from '../views/Collection.vue'
-import Show from '../views/Show.vue'
+import Show from '../views/Show1.vue'
 
 Vue.use(VueRouter)
 

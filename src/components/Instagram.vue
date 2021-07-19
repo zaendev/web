@@ -1,6 +1,6 @@
 <template>
-  <v-row class="ma-0">
-    <v-col cols="6" md="3" class="pa-0 box-instagram" v-for="(insta, i) in instagrams" :key="'insta' + i">
+  <v-row class="ma-0 scroll-product-mobile">
+    <v-col cols="10" md="3" class="pa-0 box-instagram" v-for="(insta, i) in instagrams" :key="'insta' + i">
       <v-img
         :aspect-ratio="1"
         :src="insta.image"
@@ -8,7 +8,7 @@
       <div class="foreground">
         <dir class="content">
           <div>
-            <v-icon color="black">
+            <v-icon large color="black">
               mdi-instagram
             </v-icon>
           </div>
@@ -21,8 +21,10 @@
 
 <script>
 export default {
-  name: "Home",
-
+  props: [
+    'link',
+    'image'
+  ],
   components: {
     //
   },
@@ -30,35 +32,35 @@ export default {
   data: () => ({
     instagrams: [
       {
-        image: "https://cdn.shopify.com/s/files/1/1368/3463/products/CUTS-2020-08-06_ON-MODEL_25083.jpg?v=1626134493",
+        image: "https://element9.solindo.com/img-tuft/14156508_1045751618877971_1684864984_n.jpg",
         link: "#",
       },
       {
-        image: "https://cdn.shopify.com/s/files/1/1368/3463/products/CUTS-2020-08-06_ON-MODEL_25083.jpg?v=1626134493",
+        image: "https://element9.solindo.com/img-tuft/14262798_601504423364164_456762347_n.jpg",
         link: "#",
       },
       {
-        image: "https://cdn.shopify.com/s/files/1/1368/3463/products/CUTS-2020-08-06_ON-MODEL_25083.jpg?v=1626134493",
+        image: "https://element9.solindo.com/img-tuft/13743279_1227771227257016_2074654691_n.jpg",
         link: "#",
       },
       {
-        image: "https://cdn.shopify.com/s/files/1/1368/3463/products/CUTS-2020-08-06_ON-MODEL_25083.jpg?v=1626134493",
+        image: "https://element9.solindo.com/img-tuft/13737007_1750124951925129_553349971_n.jpg",
         link: "#",
       },
       {
-        image: "https://cdn.shopify.com/s/files/1/1368/3463/products/CUTS-2020-08-06_ON-MODEL_25083.jpg?v=1626134493",
+        image: "https://element9.solindo.com/img-tuft/13737007_1750124951925129_553349971_n.jpg",
         link: "#",
       },
       {
-        image: "https://cdn.shopify.com/s/files/1/1368/3463/products/CUTS-2020-08-06_ON-MODEL_25083.jpg?v=1626134493",
+        image: "https://element9.solindo.com/img-tuft/14156508_1045751618877971_1684864984_n.jpg",
         link: "#",
       },
       {
-        image: "https://cdn.shopify.com/s/files/1/1368/3463/products/CUTS-2020-08-06_ON-MODEL_25083.jpg?v=1626134493",
+        image: "https://element9.solindo.com/img-tuft/14262798_601504423364164_456762347_n.jpg",
         link: "#",
       },
       {
-        image: "https://cdn.shopify.com/s/files/1/1368/3463/products/CUTS-2020-08-06_ON-MODEL_25083.jpg?v=1626134493",
+        image: "https://element9.solindo.com/img-tuft/14262798_601504423364164_456762347_n.jpg",
         link: "#",
       },
     ],

@@ -13,7 +13,7 @@
               {{ title }}
             </h1>
           </div>
-          <v-btn large outlined color="white" class="mt-3" :to="link"> Shop Now </v-btn>
+          <v-btn large outlined color="white" class="mt-3" to="/collections"> Shop Now </v-btn>
         </div>
       </div>
     </v-img>

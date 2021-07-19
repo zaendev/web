@@ -1,24 +1,24 @@
 <template>
   <div>
     <v-card tile elevation="0">
-      <v-chip class="ma-2 card-tag" small color="white"> RESTOKED </v-chip>
+      <v-chip outlined class="ma-2 card-tag" x-small v-if="tag"> {{ tag }} </v-chip>
       <router-link to="/show">
       <v-img
         :aspect-ratio="3/4"
-        src="https://cdn.shopify.com/s/files/1/1368/3463/products/CUTS-2020-08-06_ON-MODEL_25083.jpg?v=1626134493"
+        :src="image"
       ></v-img>
       </router-link>
 
       <div class="d-flex text mt-2 pa-2">
         <div class="text-left">
           <div class="color">{{ colorName }}</div>
-          <div class="card-title">Crew Curve-Hem</div>
-          <div class="price">$48</div>
+          <div class="card-title">{{ title }}</div>
+          <div class="price">${{ price }}</div>
         </div>
         <v-spacer></v-spacer>
         <div class="text-right">
-          <div class="color">11 Colors</div>
-          <div class="color-icon">
+          <div class="color">3 Colors</div>
+          <div class="color-icon" v-if="$vuetify.breakpoint.smAndUp">
             <v-tooltip
               bottom
               v-for="(color, i) in colors"
@@ -44,7 +44,12 @@
 
 <script>
 export default {
-  name: "Home",
+  props: [
+    'title',
+    'price',
+    'image',
+    'tag'
+  ],
 
   components: {
     //
@@ -65,38 +70,6 @@ export default {
       {
         name: "Laurel Oak",
         code: "#8a8369",
-      },
-      {
-        name: "Mountain Mist",
-        code: "#a98f86",
-      },
-      {
-        name: "Sage",
-        code: "#7d867f",
-      },
-      {
-        name: "Vintage",
-        code: "#556472",
-      },
-      {
-        name: "Mirage",
-        code: "#b8c7d2",
-      },
-      {
-        name: "Sunset",
-        code: "#e69677",
-      },
-      {
-        name: "Coyote",
-        code: "#898774",
-      },
-      {
-        name: "Granite",
-        code: "#b1afb4",
-      },
-      {
-        name: "Pacific Mist",
-        code: "#c4d3cf",
       },
     ],
   }),
@@ -135,11 +108,12 @@ export default {
     .color-icon {
       display: flex;
       margin-top: 5px;
+      justify-content: flex-end;
       .icon {
         cursor: pointer;
         width: 6px;
         height: 6px;
-        margin: 0 2px;
+        margin-left: 2px;
         border-radius: 50%;
         border: 1px solid;
       }
